@@ -12,5 +12,7 @@ the config elements is :
 * password (your account password)
 * message subject
 
+you must config thits file for (set default option) first before using the app , or u can put your config directly from GUI
+
 ---
 ## **IMPORTANT : IF YOU EXPORT CONFIGURATION , EVERYTHING WILL BE IN PLAIN TEXT , INCLUDE PASSWORDS**
