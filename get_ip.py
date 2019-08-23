@@ -379,9 +379,8 @@ class send_email (threading.Thread) :
         config = ex.tab_2.read_config()
         send_email = ip().send_ip(config["smtp"],config["port"],config["account"],config["password"],config["subject"],self.send_to)
         if send_email == "sent" :
-            ex.tab_1.res.setText(ip().get_ip())
+            ex.tab_1.res.setText(ip().get_ip()[1])
             ex.tab_1.stat.setText("IP Sent")
-            print (send_email)
             ex.setDisabled(False)
         else : 
             ex.setDisabled(False)
@@ -400,7 +399,7 @@ class ip  :
             return (stat , message)
 
     def send_ip(self , smtp_server , port , account , password , subject ,send_to):
-        msg = self.get_ip()
+        msg = self.get_ip()[1]
         try :
             with smtplib.SMTP(smtp_server , port ) as conn :
                 conn.ehlo()
